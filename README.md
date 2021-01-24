@@ -1,5 +1,7 @@
 # Template for TypeScript GitHub Action
 
+![GitHub release](https://img.shields.io/github/v/release/fabasoad/typescript-action?include_prereleases) ![YAML Lint](https://github.com/fabasoad/typescript-action/workflows/YAML%20Lint/badge.svg)
+
 ## TL;DR
 
 ```bash
