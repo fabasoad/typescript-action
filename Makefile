@@ -19,7 +19,7 @@ default:
 	if [[ -z "$$cc_test_coverage_badge" ]] ; then cc_test_coverage_badge=''; else cc_test_coverage_badge="$$cc_test_coverage_badge "; fi; \
 	export CC_TESTS_COVERAGE_BADGE=$$cc_test_coverage_badge; \
 	envsubst < README.md.template > README.md; \
-	rm -f README.md; \
+	rm -f README.md.template; \
 	envsubst < action.yml.template > action.yml; \
 	rm -f action.yml.template; \
 	envsubst < CONTRIBUTING.md.template > CONTRIBUTING.md; \
@@ -27,6 +27,9 @@ default:
 	envsubst < LICENSE.template > LICENSE; \
 	rm -f LICENSE.template; \
 	envsubst < package.json.template > package.json; \
-	rm -f package.json.template
+	rm -f package.json.template; \
+	envsubst < .github.template/pull_request_template.md > .github.template/pull_request_template.md; \
+	envsubst < .github.template/ISSUE_TEMPLATE/bug_report.md > .github.template/ISSUE_TEMPLATE/bug_report.md; \
+	envsubst < .github.template/ISSUE_TEMPLATE/feature_request.md > .github.template/ISSUE_TEMPLATE/feature_request.md; \
 	@mv .github.template .github
 	
