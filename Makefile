@@ -58,3 +58,4 @@ default:
 	@chmod +x .husky/pre-push
 	@chmod +x .husky/prepare-commit-msg
 	@echo "🌟 Done"
+	@rm -f Makefile
