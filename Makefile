@@ -1,16 +1,5 @@
 SHELL := /bin/bash
 
-# .PHONY: 
-
-# build:  
-# 	@read -p "Enter Module Name:" module; \  
-# 	module_dir=./modules/$$module; \
-# 	mkdir -p $$module_dir/build
-
-	# @read -p "Repository owner ($(git config user.name)): " repo_owner
-	# @export REPO_OWNER=$repo_owner
-	# @echo $REPO_OWNER
-  # export REPO_TITLE=$$repo_title
 default:
 	@read -p "Project title: " repo_title; \
 	export REPO_TITLE=$$repo_title; \
@@ -29,9 +18,23 @@ default:
 	read -p "CodeClimate test coverage badge (leave empty if you do not have it): " cc_test_coverage_badge; \
 	if [[ -z "$$cc_test_coverage_badge" ]] ; then cc_test_coverage_badge=''; else cc_test_coverage_badge="$$cc_test_coverage_badge "; fi; \
 	export CC_TESTS_COVERAGE_BADGE=$$cc_test_coverage_badge; \
-	envsubst < README.md.template > README_NEW.md; \
-	rm -f README.md; \
+	envsubst < README.md.template > README.md; \
+	rm -f README.md.template; \
 	envsubst < action.yml.template > action.yml; \
 	rm -f action.yml.template; \
-	mv .github.template .github
+	envsubst < CONTRIBUTING.md.template > CONTRIBUTING.md; \
+	rm -f CONTRIBUTING.md.template; \
+	export LICENSE_YEAR=$$(date +'%Y'); \
+	envsubst < LICENSE.template > LICENSE; \
+	rm -f LICENSE.template; \
+	envsubst < package.json.template > package.json; \
+	rm -f package.json.template; \
+	envsubst < .github.template/pull_request_template.md.template > .github.template/pull_request_template.md; \
+	rm -f .github.template/pull_request_template.md.template; \
+	envsubst < .github.template/ISSUE_TEMPLATE/bug_report.md.template > .github.template/ISSUE_TEMPLATE/bug_report.md; \
+	rm -f .github.template/ISSUE_TEMPLATE/bug_report.md.template; \
+	envsubst < .github.template/ISSUE_TEMPLATE/feature_request.md.template > .github.template/ISSUE_TEMPLATE/feature_request.md; \
+	rm -f .github.template/ISSUE_TEMPLATE/feature_request.md.template
+	@rm -rf .github
+	@mv .github.template .github
 	
