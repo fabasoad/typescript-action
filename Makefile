@@ -24,14 +24,14 @@ default:
 	rm -f action.yml.template; \
 	envsubst < CONTRIBUTING.md.template > CONTRIBUTING.md; \
 	rm -f CONTRIBUTING.md.template; \
-	export LICENSE_YEAR=$(date +'%Y'); \
+	export LICENSE_YEAR=$$(date +'%Y'); \
 	envsubst < LICENSE.template > LICENSE; \
 	rm -f LICENSE.template; \
 	envsubst < package.json.template > package.json; \
 	rm -f package.json.template; \
-	envsubst < .github.template/pull_request_template.md > .github.template/pull_request_template.md; \
-	envsubst < .github.template/ISSUE_TEMPLATE/bug_report.md > .github.template/ISSUE_TEMPLATE/bug_report.md; \
-	envsubst < .github.template/ISSUE_TEMPLATE/feature_request.md > .github.template/ISSUE_TEMPLATE/feature_request.md
+	envsubst < .github.template/pull_request_template.md | tee .github.template/pull_request_template.md; \
+	envsubst < .github.template/ISSUE_TEMPLATE/bug_report.md | tee .github.template/ISSUE_TEMPLATE/bug_report.md; \
+	envsubst < .github.template/ISSUE_TEMPLATE/feature_request.md | tee .github.template/ISSUE_TEMPLATE/feature_request.md
 	@rm -rf .github
 	@mv .github.template .github
 	
