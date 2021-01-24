@@ -30,6 +30,6 @@ default:
 	rm -f package.json.template; \
 	envsubst < .github.template/pull_request_template.md > .github.template/pull_request_template.md; \
 	envsubst < .github.template/ISSUE_TEMPLATE/bug_report.md > .github.template/ISSUE_TEMPLATE/bug_report.md; \
-	envsubst < .github.template/ISSUE_TEMPLATE/feature_request.md > .github.template/ISSUE_TEMPLATE/feature_request.md; \
+	envsubst < .github.template/ISSUE_TEMPLATE/feature_request.md > .github.template/ISSUE_TEMPLATE/feature_request.md
 	@mv .github.template .github
 	
