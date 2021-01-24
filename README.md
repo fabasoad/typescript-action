@@ -1,13 +1,10 @@
 # Template for TypeScript GitHub Action
 
-<!--description
+## TL;DR
 
-REPO_TITLE - Title of this GitHub Action, e.g. "Setup Wren CLI"
-REPO_OWNER - Owner of the repository, e.g. "fabasoad"
-REPO_OWNER_DISPLAY_NAME - Author full name, e.g. "John Doe"
-REPO_NAME - Repository name, e.g. "setup-wren-action"
-
-description-->
+```bash
+make
+```
 
 ## How to use
 
@@ -31,7 +28,7 @@ Go to your repository in GitHub and click on "Settings" tab. Then choose "Secret
 
 - `Project title` is an actual GitHub Action name. This is what you will see in Marketplace as a title.
 - `Project owner` is an owner of this repository. Basically it's <https://github.com/{THIS}/some-project> part.
-- `Project owner's display name` is a name that is used in `author` field in `package.json` and `action.yml`.
+- `Project owner's display name` is the owner's name that is used in public files, like `LICENSE`, `package.json`, `action.yml`, etc.
 - `Project name` is a name of this repository. Basically it's <https://github.com/owner/{THIS}> part.
 - `CodeClimate maintainability badge` is a badge of CodeClimate maintainability result. `[3]`
 - `CodeClimate test coverage badge` is a badge of CodeClimate test coverage result. `[3]`
