@@ -8,7 +8,7 @@ default:
 	export PM_LOCK_FILE=$$pm_lock_file; \
 	read -p "💡 Project title: " repo_title; \
 	export REPO_TITLE=$$repo_title; \
-	read -p "✒️ Project owner ($$(git config user.name)): " repo_owner; \
+	read -p "🧑‍🎨 Project owner ($$(git config user.name)): " repo_owner; \
 	[ -z "$$repo_owner" ] && repo_owner=$$(git config user.name); \
 	export REPO_OWNER=$$repo_owner; \
 	read -p "📝 Project owner's display name ($$(git config user.name)): " repo_owner_display_name; \
