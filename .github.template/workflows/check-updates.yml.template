@@ -18,7 +18,8 @@ jobs:
       - name: Print outdated dependencies
         run: ${PM_CLI} outdated || true
       - name: Update versions
-        run: yarn upgrade --latest
+        run: if [[ "${PM_CLI}" = "yarn" ]] ; then yarn upgrade --latest; else npm update; fi;
+        shell: bash
       - name: Compile
         run: |
           rm -f ${PM_LOCK_FILE}
@@ -33,7 +34,8 @@ jobs:
         shell: bash
       - name: Increase version
         if: ${{ steps.git-diff.outputs.count > 0 }}
-        run: yarn version --patch --no-git-tag-version
+        run: if [[ "${PM_CLI}" = "yarn" ]] ; then yarn version --patch --no-git-tag-version; else npm version patch --no-git-tag-version; fi;
+        shell: bash
       - name: Create PR
         if: ${{ steps.git-diff.outputs.count > 0 }}
         uses: peter-evans/create-pull-request@v3.6.0
