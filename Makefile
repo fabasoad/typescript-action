@@ -29,9 +29,12 @@ default:
 	rm -f LICENSE.template; \
 	envsubst < package.json.template > package.json; \
 	rm -f package.json.template; \
-	envsubst < .github.template/pull_request_template.md | tee .github.template/pull_request_template.md; \
-	envsubst < .github.template/ISSUE_TEMPLATE/bug_report.md | tee .github.template/ISSUE_TEMPLATE/bug_report.md; \
-	envsubst < .github.template/ISSUE_TEMPLATE/feature_request.md | tee .github.template/ISSUE_TEMPLATE/feature_request.md
+	envsubst < .github.template/pull_request_template.md.template > .github.template/pull_request_template.md; \
+	rm -f .github.template/pull_request_template.md.template; \
+	envsubst < .github.template/ISSUE_TEMPLATE/bug_report.md.template > .github.template/ISSUE_TEMPLATE/bug_report.md; \
+	rm -f .github.template/ISSUE_TEMPLATE/bug_report.md.template; \
+	envsubst < .github.template/ISSUE_TEMPLATE/feature_request.md.template > .github.template/ISSUE_TEMPLATE/feature_request.md; \
+	rm -f .github.template/ISSUE_TEMPLATE/feature_request.md.template
 	@rm -rf .github
 	@mv .github.template .github
 	
