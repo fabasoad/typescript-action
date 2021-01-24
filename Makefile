@@ -57,4 +57,3 @@ default:
 	@chmod +x .husky/pre-commit
 	@chmod +x .husky/pre-push
 	@chmod +x .husky/prepare-commit
-	
