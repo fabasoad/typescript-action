@@ -53,4 +53,8 @@ default:
 	@rm -rf .github
 	@mv .github.template .github
 	@mv .husky.template .husky
+	@chmod +x .husky/commit-msg
+	@chmod +x .husky/pre-commit
+	@chmod +x .husky/pre-push
+	@chmod +x .husky/prepare-commit
 	
