@@ -36,8 +36,8 @@ make
 
 ### Prerequisites
 
-- `Make` ([Windows](http://gnuwin32.sourceforge.net/packages/make.htm), [MacOS](https://formulae.brew.sh/formula/make), [Linux](https://askubuntu.com/a/272020))
-- `yarn`
+- [Make](https://www.gnu.org/software/make/manual/make.html) ([Windows](http://gnuwin32.sourceforge.net/packages/make.htm), [MacOS](https://formulae.brew.sh/formula/make), [Linux](https://askubuntu.com/a/272020))
+- [git secrets](https://github.com/awslabs/git-secrets)
 
 ### Setup secrets
 
