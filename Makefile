@@ -1,7 +1,12 @@
 SHELL := /bin/bash
 
 default:
-	@read -p "Project title: " repo_title; \
+	@read -p "Package manager that you're going to use. Can be "npm" or "yarn" (yarn): " pm_cli; \
+	if [[ -z "$$pm_cli" ]] ; then pm_cli="yarn"; else pm_cli="npm"; fi; \
+	export PM_CLI=$$pm_cli; \
+	if [[ "$$pm_cli" = "yarn" ]] ; then pm_lock_file='yarn.lock'; else pm_lock_file="package-lock.json"; fi; \
+	export PM_LOCK_FILE=$$pm_lock_file; \
+	read -p "Project title: " repo_title; \
 	export REPO_TITLE=$$repo_title; \
 	read -p "Project owner ($$(git config user.name)): " repo_owner; \
 	[ -z "$$repo_owner" ] && repo_owner=$$(git config user.name); \
@@ -34,7 +39,18 @@ default:
 	envsubst < .github.template/ISSUE_TEMPLATE/bug_report.md.template > .github.template/ISSUE_TEMPLATE/bug_report.md; \
 	rm -f .github.template/ISSUE_TEMPLATE/bug_report.md.template; \
 	envsubst < .github.template/ISSUE_TEMPLATE/feature_request.md.template > .github.template/ISSUE_TEMPLATE/feature_request.md; \
-	rm -f .github.template/ISSUE_TEMPLATE/feature_request.md.template
+	rm -f .github.template/ISSUE_TEMPLATE/feature_request.md.template; \
+	envsubst < .github.template/workflows/check-updates.yml.template > .github.template/workflows/check-updates.yml; \
+	rm -f .github.template/workflows/check-updates.yml.template; \
+	envsubst < .github.template/workflows/security-tests.yml.template > .github.template/workflows/security-tests.yml; \
+	rm -f .github.template/workflows/security-tests.yml.template; \
+	envsubst < .github.template/workflows/unit-tests.yml.template > .github.template/workflows/unit-tests.yml; \
+	rm -f .github.template/workflows/unit-tests.yml.template; \
+	envsubst < .husky.template/pre-commit.template > .husky.template/pre-commit; \
+	rm -f .husky.template/pre-commit.template; \
+	envsubst < .husky.template/pre-push.template > .husky.template/pre-push; \
+	rm -f .husky.template/pre-push.template
 	@rm -rf .github
 	@mv .github.template .github
+	@mv .husky.template .husky
 	

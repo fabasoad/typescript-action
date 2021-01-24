@@ -19,9 +19,9 @@ jobs:
         with:
           ref: ${{ github.ref }}
       - name: Snyk authenticate
-        run: yarn run security:auth ${{ secrets.SNYK_API_TOKEN }}
+        run: ${PM_CLI} run security:auth ${{ secrets.SNYK_API_TOKEN }}
       - name: Snyk test
-        run: yarn run security:test
+        run: ${PM_CLI} run security:test
   codeql_tests:
     name: CodeQL
     runs-on: ubuntu-latest

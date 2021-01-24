@@ -10,20 +10,20 @@ env:
 
 jobs:
   check_versions:
-    name: Yarn
+    name: ${PM_CLI}
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.4
       - name: Print outdated dependencies
-        run: yarn outdated || true
+        run: ${PM_CLI} outdated || true
       - name: Update versions
         run: yarn upgrade --latest
       - name: Compile
         run: |
-          rm -f yarn.lock
-          yarn install
-          yarn run build
+          rm -f ${PM_LOCK_FILE}
+          ${PM_CLI} install
+          ${PM_CLI} run build
         shell: bash
       - name: Check local changes
         id: git-diff
