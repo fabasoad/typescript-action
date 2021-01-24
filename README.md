@@ -2,17 +2,42 @@
 
 ![GitHub release](https://img.shields.io/github/v/release/fabasoad/typescript-action?include_prereleases) ![YAML Lint](https://github.com/fabasoad/typescript-action/workflows/YAML%20Lint/badge.svg)
 
-## TL;DR
+Are you going to create a new GitHub action and don't know how to start? This template project is exactly for you! All what you need to do is:
+
+- [Create a new repository from this template project](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template).
+- Follow the [instructions](#how-to-use).
+
+After that half of a work is done :sunglasses:
+
+## What you will have out of the box
+
+- The following configured CI pipelines:
+  - `Security tests` using [Snyk](https://snyk.io) and [CodeQL](https://github.com/github/codeql-action).
+  - Twice a month check `npm` updates and create PR automatically in case of any new versions are exist.
+  - `Create release` pipeline that will create a new release when you merge your MR into `main` branch.
+  - `Unit tests` pipeline that will run `lint` and `test` commands on each push to `main`, `feature/*` or `bugfix/*` branch.
+  - `Yaml Lint` pipeline that will lint `yaml` files in case of any of them have been changed.
+- `PR`, `Bug report` and `Feature request` GitHub templates.
+- `README`, `LICENSE` and `Contributing` documentation files.
+- `git` hooks that are:
+  - checking that you're **not** committing into `main` branch.
+  - checking that you're **not** committing any sensitive information.
+  - running `lint` and `test` commands on each `git push`.
+  - building `dist/index.js` file (that is used as a main file for GitHub Action) on each `git commit`.
+- VS Code settings file that have some basic settings for easier development.
+
+## How to use
+
+### TL;DR
 
 ```bash
 make
 ```
 
-## How to use
-
 ### Prerequisites
 
 - `Make` ([Windows](http://gnuwin32.sourceforge.net/packages/make.htm), [MacOS](https://formulae.brew.sh/formula/make), [Linux](https://askubuntu.com/a/272020))
+- `yarn`
 
 ### Setup secrets
 
