@@ -8,12 +8,9 @@ make
 
 ## How to use
 
-### Setup repository
+### Prerequisites
 
-- Create new repository and use this repository as a template.
-- Clone newly created repository to your machine.
-- Run `make` command and follow the instructions.
-- Enjoy!
+- `Make` ([Windows](http://gnuwin32.sourceforge.net/packages/make.htm), [MacOS](https://formulae.brew.sh/formula/make), [Linux](https://askubuntu.com/a/272020))
 
 ### Setup secrets
 
@@ -21,6 +18,13 @@ Go to your repository in GitHub and click on "Settings" tab. Then choose "Secret
 
 - `CC_TEST_REPORTER_ID` - CodeClimate Reported ID. `[1]`
 - `SNYK_API_TOKEN` - Snyk API Token. `[2]`
+
+### Setup repository
+
+- Create new repository and use this repository as a template.
+- Clone newly created repository to your machine.
+- Run `make` command and follow the instructions.
+- Enjoy!
 
 ## Details
 
