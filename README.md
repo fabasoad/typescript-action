@@ -11,6 +11,7 @@ After that half of a work is done :sunglasses:
 
 ## What you will have out of the box
 
+- Configured tests skeleton, all what you need to do is to start writing tests, no need to worry about libraries, folder structure, commands, etc.
 - The following configured CI pipelines:
   - `Security tests` using [Snyk](https://snyk.io) and [CodeQL](https://github.com/github/codeql-action).
   - Twice a month check `npm` updates and create PR automatically in case of any new versions are exist.
@@ -39,14 +40,22 @@ make
 - [Make](https://www.gnu.org/software/make/manual/make.html) ([Windows](http://gnuwin32.sourceforge.net/packages/make.htm), [MacOS](https://formulae.brew.sh/formula/make), [Linux](https://askubuntu.com/a/272020))
 - [git secrets](https://github.com/awslabs/git-secrets)
 
-### Setup secrets
+### Setup project
+
+#### Setup integrations
+
+- [Snyk](https://snyk.io)
+- [CodeClimate](https://codeclimate.com)
+- [LGTM](https://lgtm.com/)
+
+#### Setup secrets
 
 Go to your repository in GitHub and click on "Settings" tab. Then choose "Secrets" on a left panel and add the following new secrets:
 
 - `CC_TEST_REPORTER_ID` - CodeClimate Reported ID. `[1]`
 - `SNYK_API_TOKEN` - Snyk API Token. `[2]`
 
-### Setup repository
+#### Setup repository
 
 - Create new repository and use this repository as a template.
 - Clone newly created repository to your machine.
