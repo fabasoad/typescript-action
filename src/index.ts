@@ -1,10 +1,10 @@
-import { error } from '@actions/core';
+import { setFailed } from '@actions/core';
 
-export const run = async (err: typeof error = error) => {
+export const run = async (sf: typeof setFailed = setFailed) => {
   try {
     // Your main code here
   } catch (e) {
-    err((<Error>e).message)
+    sf((<Error>e).message)
   }
 }
 
