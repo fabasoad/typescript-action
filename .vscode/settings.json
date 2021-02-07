@@ -9,10 +9,13 @@
     "Autobuild",
     "UNSECURE",
     "codeql",
+    "ibiqlik",
     "markdownlint",
+    "nosborn",
     "semver",
     "simbo",
-    "vercel"
+    "vercel",
+    "yamllint"
   ],
   "editor.rulers": [ 80 ]
 }
