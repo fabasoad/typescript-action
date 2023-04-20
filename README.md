@@ -1,6 +1,7 @@
 # Template for TypeScript GitHub Action
 
-![GitHub release](https://img.shields.io/github/v/release/fabasoad/typescript-action?include_prereleases) ![Lint](https://github.com/fabasoad/typescript-action/workflows/Lint/badge.svg)
+![GitHub release](https://img.shields.io/github/v/release/fabasoad/typescript-action?include_prereleases)
+![Lint](https://github.com/fabasoad/typescript-action/workflows/Lint/badge.svg)
 
 Are you going to create a new GitHub action and don't know how to start? This template project is exactly for you! All what you need to do is:
 

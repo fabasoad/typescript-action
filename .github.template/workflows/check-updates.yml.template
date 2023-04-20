@@ -28,9 +28,7 @@ jobs:
         shell: bash
       - name: Check local changes
         id: git-diff
-        run: |
-          changed_files=$(git status --porcelain --untracked-files=no | wc -l)
-          echo '::set-output name=count::'$changed_files
+        run: echo '::set-output name=count::'$(git status --porcelain --untracked-files=no | wc -l)
         shell: bash
       - name: Increase version
         if: ${{ steps.git-diff.outputs.count > 0 }}
