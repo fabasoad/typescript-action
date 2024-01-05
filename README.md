@@ -1,5 +1,7 @@
 # Template for TypeScript GitHub Action
 
+> :warning: This repo is archived and no longer maintained.
+
 ![GitHub release](https://img.shields.io/github/v/release/fabasoad/typescript-action?include_prereleases)
 ![Lint](https://github.com/fabasoad/typescript-action/workflows/Lint/badge.svg)
 
